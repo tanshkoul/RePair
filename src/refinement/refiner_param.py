@@ -29,7 +29,7 @@ refiners = {
             'Trunc5Stemmer':        0,
 
             'BackTranslation':      0,
-            'Bing':                 1,
+            'Bing':                 0,
         },
         'local': {
             'RelevanceFeedback':    0,
