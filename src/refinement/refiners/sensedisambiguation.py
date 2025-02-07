@@ -1,5 +1,6 @@
 from pywsd import disambiguate
-from src.refinement.refiners.abstractqrefiner import AbstractQRefiner
+from refinement.refiners.abstractqrefiner import AbstractQRefiner
+# from src.refinement.refiners.abstractqrefiner import AbstractQRefiner
 
 
 class SenseDisambiguation(AbstractQRefiner):

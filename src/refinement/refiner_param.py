@@ -8,7 +8,7 @@ settings = {
 
 refiners = {
         'global': {
-            'SenseDisambiguation':  0,
+            'SenseDisambiguation':  1,
             'Thesaurus':            0,
             'Wordnet':              0,
             'Conceptnet':           0,
