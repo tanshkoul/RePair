@@ -9,7 +9,7 @@ extension = '.exe' if platform.system() == 'Windows' else ""
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 settings = {
-    'cmd': ['query_refinement'],  # steps of pipeline, ['query_refinement', 'similarity', 'rag', 'search', 'rag_fusion', 'eval', 'agg', 'build', 'box','dense_retrieve', 'stats]
+    'cmd': ['eval'],  # steps of pipeline, ['query_refinement', 'similarity', 'rag', 'search', 'rag_fusion', 'eval', 'agg', 'build', 'box','dense_retrieve', 'stats]
     'datalist': ['./../data/raw/robust04', './../data/raw/gov2', './../data/raw/antique', './../data/raw/dbpedia', './../data/raw/clueweb09b'], # ['./../data/raw/robust04', './../data/raw/gov2', './../data/raw/antique', './../data/raw/dbpedia', './../data/raw/clueweb09b']
     'domainlist': ['robust04', 'gov2', 'antique', 'dbpedia', 'clueweb09b'], # ['robust04', 'gov2', 'antique', 'dbpedia', 'clueweb09b']
     'fusion_category': ['global', 'local'],  # ['all', 'global', 'local', 'bt_nllb', 'bt']
@@ -20,7 +20,7 @@ settings = {
     'batch': None,              # search per batch of queries for IR search using pyserini, if None, search per query
     'topk': 100,                # number of retrieved documents for a query
     'large_ds': False,
-    'treclib': f'"./trec_eval.9.0.4/trec_eval{extension}"',  # in non-windows, remove .exe, also for pytrec_eval, 'pytrec'
+    'treclib': f'./trec_eval-9.0.7/trec_eval{extension}',  # in non-windows, remove .exe, also for pytrec_eval, 'pytrec'
     'box': {'gold': 'refined_q_metric >= original_q_metric and refined_q_metric > 0',
             'platinum': 'refined_q_metric > original_q_metric',
             'diamond': 'refined_q_metric > original_q_metric and refined_q_metric == 1'}

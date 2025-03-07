@@ -44,6 +44,7 @@ def evaluate(in_docids, out_metrics, qrels, metric, lib, mean=False, topk=10):
     # However, no duplicate [qid, docid] can be in qrels!!
     print(f'Evaluating retrieved docs for {in_docids} ...')
     if 'trec_eval' in lib:
+        # cli_cmd = f'./trec_eval-9.0.7/trec_eval {"-n" if not mean else ""} -q -m {metric} {qrels} {in_docids} > {out_metrics}'
         cli_cmd = f'{lib} {"-n" if not mean else ""} -q -m {metric} {qrels} {in_docids} > {out_metrics}'
         print(cli_cmd)
         stream = os.popen(cli_cmd)
